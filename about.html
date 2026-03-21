@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Jaroor Fitness — Unisex Gym Bhilai Since 2015 | Risali Fitness Center</title>
+  <meta name="description" content="Learn about Jaroor Fitness — Bhilai's premier unisex gym in Risali since 2015. 5000+ members, certified trainers, modern equipment. Visit us at Apurv Plaza, above SBI Bank.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jaroorfitness.com/about.html">
+  <meta name="description" content="Learn about Jaroor Fitness, Bhilai's premier gym offering state-of-the-art facilities and expert training since 2015.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ExerciseGym","name":"Jaroor Fitness","telephone":"+917987966355","address":{"@type":"PostalAddress","streetAddress":"1st Floor, Apurv Plaza, Above SBI Bank, Risali","addressLocality":"Bhilai","addressRegion":"Chhattisgarh","postalCode":"490006","addressCountry":"IN"},"url":"https://jaroorfitness.com"}</script>
+</head>
+<body>
+
+<!-- BOOKING MODAL -->
+<div id="jfModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:#181818;border:1px solid #272727;width:100%;max-width:500px;max-height:92vh;overflow-y:auto;position:relative;padding:40px 30px 28px;animation:mIn .35s ease;">
+    <style>@keyframes mIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}</style>
+    <button onclick="jfClose()" style="position:absolute;top:12px;right:12px;width:32px;height:32px;background:#272727;border:1px solid #383838;color:#888;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;">&#x2715;</button>
+    <div style="text-align:center;margin-bottom:18px;">
+      <div style="width:48px;height:48px;background:rgba(232,92,26,.12);border:1px solid rgba(232,92,26,.3);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));"><i class="fas fa-dumbbell" style="font-size:20px;color:#e85c1a;"></i></div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#f0ede6;margin:0 0 4px;">Book a Free Session</h2>
+      <p style="font-size:13px;color:#888;margin:0;">We'll call you back within 2 hours.</p>
+    </div>
+    <div id="jfTabs" style="display:flex;gap:2px;margin-bottom:18px;">
+      <button id="jfTab1" onclick="jfTab('book')" style="flex:1;padding:10px;background:#e85c1a;color:white;border:1px solid #e85c1a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Book Appointment</button>
+      <button id="jfTab2" onclick="jfTab('enq')"  style="flex:1;padding:10px;background:#272727;color:#888;border:1px solid #383838;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">General Enquiry</button>
+    </div>
+    <div id="jfBook" style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Full Name *</label><input id="jfBName" type="text" placeholder="Your name" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;" onfocus="this.style.borderColor='#e85c1a'" onblur="this.style.borderColor='#383838'"></div>
+        <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Phone *</label><input id="jfBPhone" type="tel" placeholder="+91 00000 00000" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;" onfocus="this.style.borderColor='#e85c1a'" onblur="this.style.borderColor='#383838'"></div>
+      </div>
+      <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Service</label>
+        <select id="jfBSvc" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;-webkit-appearance:none;">
+          <option value="">Select...</option><option>Personal Training</option><option>Group Classes</option><option>Strength Training</option><option>Cardio Program</option><option>Nutrition Counseling</option><option>General Membership</option>
+        </select>
+      </div>
+      <p id="jfBErr" style="display:none;color:#e74c3c;font-size:12px;font-family:'Barlow Condensed',sans-serif;font-weight:600;margin:0;"></p>
+      <button onclick="jfSubmitBook()" style="width:100%;padding:14px;background:#e85c1a;color:white;border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:flex;align-items:center;justify-content:center;gap:8px;">Confirm Booking &#160;<i class="fas fa-check"></i></button>
+    </div>
+    <div id="jfEnq" style="display:none;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Full Name *</label><input id="jfEName" type="text" placeholder="Your name" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;" onfocus="this.style.borderColor='#e85c1a'" onblur="this.style.borderColor='#383838'"></div>
+        <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Phone *</label><input id="jfEPhone" type="tel" placeholder="+91 00000 00000" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;" onfocus="this.style.borderColor='#e85c1a'" onblur="this.style.borderColor='#383838'"></div>
+      </div>
+      <div><label style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px;">Your Question *</label><textarea id="jfEMsg" rows="4" placeholder="How can we help?" style="width:100%;background:#272727;border:1px solid #383838;color:#f0ede6;padding:11px 13px;font-size:14px;outline:none;font-family:'Barlow',sans-serif;border-radius:0;resize:vertical;min-height:100px;" onfocus="this.style.borderColor='#e85c1a'" onblur="this.style.borderColor='#383838'"></textarea></div>
+      <p id="jfEErr" style="display:none;color:#e74c3c;font-size:12px;font-family:'Barlow Condensed',sans-serif;font-weight:600;margin:0;"></p>
+      <button onclick="jfSubmitEnq()" style="width:100%;padding:14px;background:#e85c1a;color:white;border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:flex;align-items:center;justify-content:center;gap:8px;">Send Enquiry &#160;<i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="jfDone" style="display:none;text-align:center;padding:16px 0;">
+      <i class="fas fa-check-circle" style="font-size:52px;color:#e85c1a;display:block;margin-bottom:14px;"></i>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#f0ede6;margin-bottom:8px;">You're All Set!</h3>
+      <p style="font-size:14px;color:#888;line-height:1.7;">Our team will call you back within 2 hours.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #272727;">
+      <a href="tel:+917987966355" style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#888;text-decoration:none;"><i class="fas fa-phone"></i> Call</a>
+      <span style="color:#383838;">|</span>
+      <a href="https://wa.me/917987966355" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#888;text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</div>
+<script>
+function jfOpen(){var nav=document.getElementById('navMenu');var hb=document.getElementById('hamburger');if(nav){nav.classList.remove('active');}if(hb){hb.classList.remove('active');}var m=document.getElementById('jfModal');m.style.display='flex';document.body.style.overflow='hidden';jfTab('book');document.getElementById('jfDone').style.display='none';document.getElementById('jfTabs').style.display='flex';['jfBName','jfBPhone','jfEName','jfEPhone'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});jfBErr('');jfEErr('');}
+function jfClose(){document.getElementById('jfModal').style.display='none';document.body.style.overflow='';}
+function jfTab(w){var b=w==='book';document.getElementById('jfBook').style.display=b?'flex':'none';document.getElementById('jfEnq').style.display=b?'none':'flex';document.getElementById('jfTab1').style.background=b?'#e85c1a':'#272727';document.getElementById('jfTab1').style.color=b?'white':'#888';document.getElementById('jfTab1').style.borderColor=b?'#e85c1a':'#383838';document.getElementById('jfTab2').style.background=b?'#272727':'#e85c1a';document.getElementById('jfTab2').style.color=b?'#888':'white';document.getElementById('jfTab2').style.borderColor=b?'#383838':'#e85c1a';}
+function jfBErr(m){var e=document.getElementById('jfBErr');e.textContent=m;e.style.display=m?'block':'none';}
+function jfEErr(m){var e=document.getElementById('jfEErr');e.textContent=m;e.style.display=m?'block':'none';}
+function jfSuccess(){document.getElementById('jfBook').style.display='none';document.getElementById('jfEnq').style.display='none';document.getElementById('jfTabs').style.display='none';document.getElementById('jfDone').style.display='block';setTimeout(jfClose,5000);}
+function jfSubmitBook(){jfBErr('');var n=document.getElementById('jfBName').value.trim(),p=document.getElementById('jfBPhone').value.trim();if(!n){jfBErr('Please enter your full name.');return;}if(!p){jfBErr('Please enter your phone number.');return;}jfSuccess();}
+function jfSubmitEnq(){jfEErr('');var n=document.getElementById('jfEName').value.trim(),p=document.getElementById('jfEPhone').value.trim(),m=document.getElementById('jfEMsg').value.trim();if(!n){jfEErr('Please enter your full name.');return;}if(!p){jfEErr('Please enter your phone number.');return;}if(!m){jfEErr('Please write your question.');return;}jfSuccess();}
+document.getElementById('jfModal').addEventListener('click',function(e){if(e.target===this)jfClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')jfClose();});
+</script>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="modal-header">
+      <div class="modal-icon"><i class="fas fa-dumbbell"></i></div>
+      <h2 class="modal-title" id="modalTitle">Book a Free Session</h2>
+      <p class="modal-subtitle">We'll call you back within 2 hours.</p>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="booking">Book Appointment</button>
+      <button class="modal-tab" data-tab="enquiry">General Enquiry</button>
+    </div>
+    <form class="modal-form" id="bookingForm" data-form="booking">
+      <div class="mform-row">
+        <div class="mform-group"><label class="mform-label">Full Name *</label><input class="mform-input" type="text" name="name" placeholder="Your name" required></div>
+        <div class="mform-group"><label class="mform-label">Phone *</label><input class="mform-input" type="tel" name="phone" placeholder="+91 00000 00000" required></div>
+      </div>
+      <div class="mform-group"><label class="mform-label">Preferred Date & Time</label><input class="mform-input" type="datetime-local" name="datetime"></div>
+      <div class="mform-group"><label class="mform-label">Service Interest</label>
+        <select class="mform-input" name="service">
+          <option value="">Select a service...</option>
+          <option>Personal Training</option><option>Group Classes (Zumba / Yoga)</option>
+          <option>Strength Training</option><option>Cardio Program</option>
+          <option>Nutrition Counseling</option><option>Membership Inquiry</option>
+        </select>
+      </div>
+      <div class="mform-group"><label class="mform-label">Your Fitness Goal</label>
+        <select class="mform-input" name="goal">
+          <option value="">Tell us your goal...</option>
+          <option>Weight Loss</option><option>Muscle Building</option>
+          <option>Improve Fitness</option><option>Sports Performance</option><option>General Wellness</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary modal-submit">Book Free Session <i class="fas fa-arrow-right"></i></button>
+    </form>
+    <form class="modal-form hidden" id="enquiryForm" data-form="enquiry">
+      <div class="mform-row">
+        <div class="mform-group"><label class="mform-label">Full Name *</label><input class="mform-input" type="text" name="name" placeholder="Your name" required></div>
+        <div class="mform-group"><label class="mform-label">Phone *</label><input class="mform-input" type="tel" name="phone" placeholder="+91 00000 00000" required></div>
+      </div>
+      <div class="mform-group"><label class="mform-label">Email</label><input class="mform-input" type="email" name="email" placeholder="your@email.com"></div>
+      <div class="mform-group"><label class="mform-label">Your Question *</label><textarea class="mform-input" name="message" rows="4" placeholder="How can we help you?" required></textarea></div>
+      <button type="submit" class="btn btn-primary modal-submit">Send Enquiry <i class="fas fa-paper-plane"></i></button>
+    </form>
+    <div class="modal-success hidden" id="modalSuccess">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h3>Done! We'll Call You Soon</h3>
+      <p>Our team will reach out within 2 hours. Follow us <strong>@jaroor_fitness_bhilai</strong></p>
+    </div>
+    <div class="modal-footer-links">
+      <a href="tel:+917987966355"><i class="fas fa-phone"></i> Call Now</a>
+      <span>·</span>
+      <a href="https://wa.me/917987966355" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <span>·</span>
+      <a href="mailto:jaroorfitness@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-main">Jaroor Fitness</span>
+          <span class="logo-sub">A Unisex Gym · Bhilai</span>
+        </a>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="trainers.html" class="nav-link">Trainers</a></li>
+        <li><a href="membership.html" class="nav-link">Membership</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><button class="nav-cta" onclick="jfOpen()">Book Free Session</button></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="section-label reveal"><span class="label">Our Story</span></div>
+      <h1 class="display">About<br>Jaroor</h1>
+      <p>Born in Bhilai, built for everyone. Transforming lives since 2015.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">—</span>
+        <span class="current">About</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section style="padding:100px 0;background:var(--obsidian);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual fade-up">
+          <div class="about-badge">
+            <div class="about-badge-num">8+</div>
+            <div class="about-badge-txt">Years of<br>Excellence</div>
+          </div>
+          <img class="about-img-main"
+            src="images/members-training.jpg" alt="Members training at Jaroor Fitness Bhilai" loading="lazy">
+          <img class="about-img-overlay"
+            src="images/gym-floor-overview.jpg"
+            alt="Weight area" loading="lazy">
+        </div>
+        <div class="about-text fade-up">
+          <div class="section-label"><span class="label">Transforming Lives</span></div>
+          <h2 class="section-title">The<br><span>Jaroor</span><br>Story</h2>
+          <p>Founded in 2015, Jaroor Fitness was born from a belief that every person in Bhilai deserved access to world-class fitness guidance — not just the privileged few. We recognized the city needed a premium unisex facility where results are the only thing that matters.</p>
+          <p>What started as a dream has grown into one of Bhilai's most trusted fitness destinations, with 5,000+ members, 15+ certified trainers, and a community built on sweat, dedication, and mutual support.</p>
+          <div class="about-pillars">
+            <div class="pillar fade-up"><i class="fas fa-bullseye"></i><h4>Mission</h4><p>Empower every member to reach their peak physical potential</p></div>
+            <div class="pillar fade-up"><i class="fas fa-eye"></i><h4>Vision</h4><p>Bhilai's most trusted fitness community — for life</p></div>
+            <div class="pillar fade-up"><i class="fas fa-heart"></i><h4>Values</h4><p>Integrity, excellence, and genuine care for every member</p></div>
+            <div class="pillar fade-up"><i class="fas fa-shield-alt"></i><h4>Promise</h4><p>No hidden fees. No empty promises. Only real results.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div style="background:var(--ember);padding:0;">
+    <div class="cta-inner" style="padding:60px 32px;">
+      <div class="stat-block" style="background:rgba(0,0,0,0.15);border-color:rgba(255,255,255,0.2);flex:1;">
+        <div class="stat-number" style="color:white;">5000<sup>+</sup></div>
+        <div class="stat-label" style="color:rgba(255,255,255,0.7);">Happy Members</div>
+      </div>
+      <div class="stat-block" style="background:rgba(0,0,0,0.15);border-color:rgba(255,255,255,0.2);flex:1;">
+        <div class="stat-number" style="color:white;">15<sup>+</sup></div>
+        <div class="stat-label" style="color:rgba(255,255,255,0.7);">Expert Trainers</div>
+      </div>
+      <div class="stat-block" style="background:rgba(0,0,0,0.15);border-color:rgba(255,255,255,0.2);flex:1;">
+        <div class="stat-number" style="color:white;">8<sup>+</sup></div>
+        <div class="stat-label" style="color:rgba(255,255,255,0.7);">Years of Excellence</div>
+      </div>
+      <div class="stat-block" style="background:rgba(0,0,0,0.15);border-color:rgba(255,255,255,0.2);flex:1;">
+        <div class="stat-number" style="color:white;">4.2<sup>★</sup></div>
+        <div class="stat-label" style="color:rgba(255,255,255,0.7);">Member Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="reviews">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label"><span class="label">Member Reviews</span></div>
+        <h2 class="section-title">The <span>Community</span><br>Speaks</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">Jaroor Fitness completely transformed my life. The trainers are incredibly knowledgeable and the community is so supportive. I've lost 15kg and feel like a completely new person.</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testimonial-author">
+            <img class="author-img" src="images/cardio-bikes.jpg" alt="Rajesh Kumar">
+            <div><div class="author-name">Rajesh Kumar</div><div class="author-since">Member since 2020 · Lost 15kg</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">The atmosphere is electric. Everyone is so welcoming and motivating. I look forward to every workout — and that says everything you need to know about this place.</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testimonial-author">
+            <img class="author-img" src="images/weights-treadmills.jpg" alt="Sunita Mishra">
+            <div><div class="author-name">Sunita Mishra</div><div class="author-since">Member since 2021 · Yoga &amp; Zumba</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">Best gym in Bhilai, no question. Premium equipment, certified trainers, and a clean professional environment. The unisex setup is very well organized. Highly recommend.</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="testimonial-author">
+            <img class="author-img" src="images/machines-training.jpg" alt="Vikas Yadav">
+            <div><div class="author-name">Vikas Yadav</div><div class="author-since">Member since 2019 · Strength Training</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2 class="display">Be Part of<br>the Story</h2>
+        <p>Join 5,000+ members who chose to transform their lives at Jaroor Fitness.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="membership.html" class="btn btn-white">View Plans</a>
+        <a href="contact.html" class="btn btn-transparent">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <span class="logo-main">Jaroor Fitness</span>
+        <span class="logo-sub">A Unisex Gym &middot; Est. 2015</span>
+        <p>Bhilai's premier fitness community. Above SBI Bank, Apurv Plaza, Risali.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/jaroorfitnessbhilai" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaroor_fitness_bhilai/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/917987966355" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="trainers.html">Trainers</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#cardio">Cardio Training</a></li>
+          <li><a href="services.html#strength">Strength Training</a></li>
+          <li><a href="services.html#personal">Personal Training</a></li>
+          <li><a href="services.html#group">Group Classes</a></li>
+          <li><a href="services.html#nutrition">Nutrition Counseling</a></li>
+          <li><a href="services.html#recovery">Recovery &amp; Wellness</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="fc-row">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>1st Floor, Apurv Plaza, Above SBI Bank,<br>Risali, Bhilai &ndash; 490006</span>
+        </div>
+        <div class="fc-row">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:+917987966355">+91 79879 66355</a></span>
+        </div>
+        <div class="fc-row">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:jaroorfitness@gmail.com">jaroorfitness@gmail.com</a></span>
+        </div>
+        <div class="fc-row">
+          <i class="fas fa-clock"></i>
+          <span>Mon&ndash;Sat: 6AM&ndash;11PM<br>Sunday: 7AM&ndash;10PM</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bar">
+      <p>&copy; 2026 <strong>Jaroor Fitness</strong>. All Rights Reserved. Risali, Bhilai, Chhattisgarh.</p>
+      <a href="https://maps.google.com/?q=Jaroor+Fitness+Apurv+Plaza+Risali+Bhilai" target="_blank">
+        <i class="fas fa-map-marker-alt"></i> View on Google Maps
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/917987966355" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top -->
+<a href="#" class="btt" id="btt" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
